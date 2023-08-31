@@ -17,7 +17,17 @@ public class KthSmallest {
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
-        // sort the array
+        // find kth value
+        System.out.println("Enter the number to find kth small & Big element:");
+
+        int k = sc.nextInt();
+
+        getKthSmallest(arr, k);
+        getKthBiggest(arr, k);
+
+    }
+
+    static void sort(int arr[]) {
         for (int i = 0; i < arr.length; i++) {
             int j = i;
             while (j > 0 && arr[j - 1] > arr[j]) {
@@ -27,11 +37,14 @@ public class KthSmallest {
                 j--;
             }
         }
-        // find kth value
-        System.out.println("Enter the number to find kth smallest element:");
 
-        int k = sc.nextInt();
+    }
 
+    static void getKthSmallest(int arr[], int k) {
         System.out.println(k + "th Smallest value is :" + arr[k - 1]);
+    }
+
+    static void getKthBiggest(int arr[], int k) {
+        System.out.println(k + "th Biggest value is :" + arr[arr.length - k]);
     }
 }
